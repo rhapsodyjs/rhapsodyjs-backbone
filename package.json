@@ -2,6 +2,7 @@
   "name": "rhapsodyjs-backbone",
   "version": "0.0.1",
   "description": "BackboneJS adapter for RhapsodyJS models",
+  "homepage": "https://github.com/rhapsodyjs/rhapsodyjs-backbone",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,10 +13,20 @@
     "model",
     "mvc"
   ],
-  "author": "talyssonoc",
+  "author": {
+    "name": "talyssonoc",
+    "email": "talyssonoc@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "jsmin": "^1.0.1",
     "lodash": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rhapsodyjs/rhapsodyjs-backbone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rhapsodyjs/rhapsodyjs-backbone/issues"
   }
 }
