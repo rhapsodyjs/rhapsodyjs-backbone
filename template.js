@@ -1,26 +1,27 @@
-(function(){
-  var <%= name %> = Backbone.Model.extend(<%= modelData %>);
-  var <%= name %>Collection = Backbone.Collection.extend({
-    model: <%= name %>,
-    url: '/data/<%= name %>'
-  });
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['backbone'], function (Backbone) {
+            return factory(Backbone);
+        });
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('backbone'));
+    } else {
+        var model = factory(root.Backbone);
+        root.<%= name %> = model.model;
+        root.<%= name %>Collection = model.collection;
+    }
+}(this, function (Backbone) {
+    
+    var model = Backbone.Model.extend(<%= modelData %>);
 
-  if(typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-       model: <%= name %>,
-       collection: <%= name %>Collection
-    };
-  }
-  else if(typeof window.define === 'function' && window.define.amd) {
-    define(function(){
-      return {
-        model: <%= name %>,
-        collection: <%= name %>Collection
-      };
+    var collection = Backbone.Collection.extend({
+        model: model,
+        url: '/data/<%= name %>'
     });
-  }
-  else {
-    window.<%= name %> = <%= name %>;
-    window.<%= name %>Collection = <%= name %>Collection;
-  }
-}());
+
+    return {
+        model: model,
+        collection: collection
+    };
+
+}));

@@ -1,6 +1,6 @@
 {
   "name": "rhapsodyjs-backbone",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BackboneJS adapter for RhapsodyJS models",
   "homepage": "https://github.com/rhapsodyjs/rhapsodyjs-backbone",
   "main": "index.js",
